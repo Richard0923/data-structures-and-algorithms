@@ -79,7 +79,8 @@ Write a function named removeWithForEach that produces the same output as challe
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithForEach = (arr, callback) => {
-  // Solution code here...
+  arr.forEach((num, index, arr) => {callback(num, arr)});
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,7 +94,10 @@ This anonymous function should accept up to three arguments: the element, the in
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithAnon = (arr) => {
-  // Solution code here...
+  arr.forEach( function (element, index, arr){
+    removeOne(element, arr);
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,7 +118,13 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  let inventory = [];
+  availableItems.forEach(function (item){
+    if(item['available']){
+      inventory.push(item['name']);
+    }
+  });
+  return inventory;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,7 +142,19 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  let divisible = [];
+  arr.forEach(function(num){
+    if(num % 5 === 0 && num % 3 === 0){
+        divisible.push('Fizz Buzz');
+    } else if(num % 5 === 0){
+        divisible.push('Buzz');
+    } else if(num % 3 === 0){
+        divisible.push('Fizz');
+    } else{
+      divisible.push(num);
+    } 
+  })
+  return divisible; 
 };
 
 /* ------------------------------------------------------------------------------------------------
