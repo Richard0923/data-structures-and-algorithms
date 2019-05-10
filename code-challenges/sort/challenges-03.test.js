@@ -145,6 +145,9 @@ const meetings = [
 
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
+  const weekdays = ['Monday','Tuesday', 'Wednesday', 'Thursday','Friday'];
+  
+  arr.sort(())
 };
 
 /* ------------------------------------------------------------------------------------------------
