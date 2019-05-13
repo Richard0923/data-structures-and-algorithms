@@ -97,7 +97,7 @@ const splitFoods = (recipe) => {
   let result = [];
   recipe['ingredients'].forEach(element =>{
     let newRecipe = element.split(' ');
-    result.push(newRecipe.slice(2));
+    result.push(newRecipe.join(newRecipe.slice(2)));
   });
   
   return result;
