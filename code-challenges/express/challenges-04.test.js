@@ -27,15 +27,8 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
-  let verifyCap = /\b[A-Z].*?\b/gm;
-  let arrOfCap = [];
-  verifyCap.test(str);
-  //arrOfCap.push(str.match(verifyCap));
-  arrOfCap = str.match(verifyCap);
-
-  
-  return arrOfCap;  
+  let verifyCap = str.match(/\b[A-Z].*?\b/gm);
+  return verifyCap || [];  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,8 +38,15 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
-};
+  let cityAtoJ = [];
+  let regex = /^[A-J]/;
+  arr.forEach(city => {
+      if (regex.test(city)){
+          cityAtoJ.push(city)
+      }
+  });
+  return cityAtoJ;
+}; 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -61,7 +61,8 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+  let regexMonth = /\b[Oo]ct(ober)?\b/;
+  return regexMonth.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,7 +76,8 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
+  let noPun = /\w+\s/g;
+  return str.match(noPun);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,7 +93,7 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  // Solution code here...
+  return str.replace(/[AEIOU]|[aeiou]/g, '_');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -121,7 +123,7 @@ Run your tests from the console: jest challenges-04.solution.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 1', () => {
+xdescribe('Testing challenge 1', () => {
   test('It should return true if the input is a number', () => {
     expect(isNum(1234567890)).toBeTruthy();
     expect(isNum('12345')).toBeTruthy();
@@ -135,7 +137,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-describe('Testing challenge 2', () => {
+xdescribe('Testing challenge 2', () => {
   test('It should only return words that begin with a capital letter', () => {
     const capitalResult = isCapitalized('We only want to Return the Words that begin With a capital Letter');
 
