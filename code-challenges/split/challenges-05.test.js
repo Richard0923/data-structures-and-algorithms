@@ -97,7 +97,7 @@ const splitFoods = (recipe) => {
   let result = [];
   recipe['ingredients'].forEach(element =>{
     let newRecipe = element.split(' ');
-    result.push(newRecipe.join(newRecipe.slice(2)));
+    result.push(newRecipe.slice(2));
   });
   
   return result;
@@ -134,6 +134,11 @@ For example:
 
 const removeEvenValues = (arr) => {
   // Solution code here...
+  for(let i =arr.length; i >= 0;i--){
+    if(arr[i] % 2 === 0){
+      arr.splice(i, 1);
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,7 +157,11 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  if(numberOfCharacters < 0){
+    return str;
+  } else {
+    str.slice(0, -1 * numberOfCharacters);
+  }
 };
 
 
@@ -257,7 +266,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should shorten the string based on the first argument', () => {
     expect(removeLastCharacters('Gregor', 2)).toStrictEqual('Greg');
     expect(removeLastCharacters('Gregor', 2).length).toStrictEqual(4);
