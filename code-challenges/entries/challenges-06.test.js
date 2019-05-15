@@ -134,7 +134,7 @@ const totalCharacters = (arr) => {
   let names = [];
   arr.forEach((element) => names.push(element.name));
   arr.forEach((element) => names.push(element.spouse));
-  arr.forEach((element) => names.push(element.children.values()));
+  arr.forEach((element) => names.push(element.children[element.values()]));
   return names.length;
 };
 
