@@ -69,9 +69,9 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) => {
   return arr.map(num => {
-      if((arr[num] % 2) == 1){
+      if((num % 2) == 1){
           return "odd"
-      } else if((arr[num] % 2) == 0) {
+      } else if((num % 2) == 0) {
           return "even" 
       } else {
           return "N/A"
@@ -122,7 +122,7 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  return arr.map(item => item.ability.name );
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -245,7 +245,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return an array containing only the ability names', () => {
     expect(extractAbilities(snorlaxAbilities.abilities)).toStrictEqual(['gluttony', 'cute charm', 'immunity']);
     expect(extractAbilities(snorlaxAbilities.abilities).length).toStrictEqual(3);
