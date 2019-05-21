@@ -54,7 +54,13 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  return input.map(arr => {
+    return arr.filter(val => {
+      if(typeof val === 'number'){
+        if(val % 5 === 0) return true;
+      }
+    }).map(powerof => Math.pow(2, powerof));
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -120,7 +126,15 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  return data.map(starChar => {
+    if(starChar.gender === 'female' || starChar.gender === 'male'){
+      return starChar.name;
+    }
+  }).filter(names => {
+    if(names){
+      return true;
+    }
+  }).join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -130,7 +144,13 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((a,b) => {
+    if(parseInt(a.height) < parseInt(b.height)){
+      return a;
+    }
+    if(parseInt(a.height) > parseInt(b.height)) {
+      return a = b;
+  }}).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -164,7 +184,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return numbers divisible by five, then raise two to the power of the resulting numbers', () => {
     expect(divisibleByFiveTwoToThePower([[10, 20, 5, 4], [5, 6, 7, 9], [1, 10, 3]])).toStrictEqual([[1024, 1048576, 32], [32], [1024]]);
   });
@@ -178,14 +198,14 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return only characters that are male or female', () => {
     expect(findMaleAndFemale(starWarsData)).toStrictEqual('Luke Skywalker and Darth Vader and Leia Organa');
     expect(findMaleAndFemale([{ name: 'person', gender: 'female' }, { gender: 'lol' }, { name: 'persontwo', gender: 'male' }])).toStrictEqual('person and persontwo');
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return the name of the shortest character', () => {
     expect(findShortest(starWarsData)).toStrictEqual('R2-D2');
   });
