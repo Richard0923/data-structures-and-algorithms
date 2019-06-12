@@ -1,10 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ArrayShift",
     "\\code-challenges",
-    "\\code-challenges\\array-shift"
+    "\\code-challenges\\array-shift",
+    "\\code-challenges\\array-shift\\ArrayShift"
   ],
-  "SelectedNode": "\\code-challenges",
+  "SelectedNode": "\\code-challenges\\array-shift\\ArrayShift (2)",
   "PreviewInSolutionExplorer": false
 }

@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ricky\\Source\\Repos\\Richard0923\\data-structures-and-algorithms\\ArrayShift\\ArrayShift\\ArrayShift.csproj",
-      "projectName": "ArrayShift",
-      "projectPath": "C:\\Users\\ricky\\Source\\Repos\\Richard0923\\data-structures-and-algorithms\\ArrayShift\\ArrayShift\\ArrayShift.csproj",
+      "projectUniqueName": "C:\\Users\\ricky\\source\\repos\\Richard0923\\data-structures-and-algorithms\\code-challenges\\array-shift\\ArrayShift\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectName": "ConsoleApp1",
+      "projectPath": "C:\\Users\\ricky\\source\\repos\\Richard0923\\data-structures-and-algorithms\\code-challenges\\array-shift\\ArrayShift\\ConsoleApp1\\ConsoleApp1.csproj",
       "packagesPath": "C:\\Users\\ricky\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ricky\\Source\\Repos\\Richard0923\\data-structures-and-algorithms\\ArrayShift\\ArrayShift\\obj\\",
+      "outputPath": "C:\\Users\\ricky\\source\\repos\\Richard0923\\data-structures-and-algorithms\\code-challenges\\array-shift\\ArrayShift\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
